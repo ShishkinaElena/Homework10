@@ -9,6 +9,6 @@ public interface Callable<T> {
     void setWeight(double weight);
     void info();
 
-    void receiveCall();
+    void receiveCall() throws NameException;
 
 }

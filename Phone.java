@@ -1,6 +1,6 @@
 package dz10;
 
-public class Phone<T> implements Callable<T>, Informable<T>{
+public abstract class Phone<T> implements Callable<T>, Informable<T>{
     private T number;
     private String model;
     private double weight;
@@ -48,7 +48,7 @@ public class Phone<T> implements Callable<T>, Informable<T>{
     public void info() {
 
     }
-   public void receiveCall() {
+   public void receiveCall() throws NameException {
 
     }
 }

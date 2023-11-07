@@ -20,7 +20,9 @@ class ApplePhone<T> extends Phone<T>{
     }
 
     @Override
-    public void receiveCall() {
-        System.out.println( "Abonent: \t" + number + " \t" +abonent);
+    public void receiveCall() throws NameException {
+        if (abonent.length() < 4) throw new NameException("Длина имени меньше 4 символов" );
+        System.out.println(("Abonent: \t" + number + " \t"  + abonent ));
     }
+
 }

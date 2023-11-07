@@ -5,12 +5,17 @@ package dz10;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NameException {
         Informable informable;
-        informable = new Phone();
+        informable = new Phone() {
+            @Override
+            public void receiveCall() throws NameException {
+
+            }
+        };
         informable.infoD();
         SamsungPhone samsungPhone = new SamsungPhone("999-999-999", "Sumsung", 100.123, "Sasha");
-        XiaomiPhone xiaomiPhone = new XiaomiPhone("888-888-888", "Xiaomi", 192, "Yolca");
+        XiaomiPhone xiaomiPhone = new XiaomiPhone("888-888-888", "Xiaomi", 192, "Yolka");
         ApplePhone applePhone = new ApplePhone("777-777-777", "Apple", 200.16, "Misha");
         samsungPhone.info();
         xiaomiPhone.info();
@@ -18,17 +23,5 @@ public class Main {
         samsungPhone.receiveCall();
         xiaomiPhone.receiveCall();
         applePhone.receiveCall();
-        try {
-          String abonent = NameAbonent.getNameAbonent();
-        } catch (Error NameException) {
-            System.out.println(NameException.getMessage());
-            {
-                throw new RuntimeException();
-            }
-        } catch (NameAbonent.NameException e) {
-            throw new RuntimeException(e);
-        }
-
-
     }
 }
